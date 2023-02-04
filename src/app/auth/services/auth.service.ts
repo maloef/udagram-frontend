@@ -32,6 +32,7 @@ export class AuthService {
   }
 
   async login(email: string, password: string): Promise<any> {
+    console.info("user with email", email, "logs in")
     return this.api.post('/users/auth/login',
               {email: email, password: password})
               .then((res) => {
@@ -48,6 +49,7 @@ export class AuthService {
   }
 
   register(user: User, password: string): Promise<any> {
+    console.info("user", user, "registers")
     return this.api.post('/users/auth/',
               {email: user.email, password: password})
               .then((res) => {
