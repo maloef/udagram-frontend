@@ -11,8 +11,8 @@ before_script:
 
 script:
     - docker build -t udagram-api-feed .
-    - docker tag udagram-api-feed maloef/udagram-frontend:latest
+    - docker tag udagram-api-feed maloef/udagram-frontend:v1
 
 after_success:
     - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-    - docker push maloef/udagram-frontend:latest
+    - docker push maloef/udagram-frontend:v1
